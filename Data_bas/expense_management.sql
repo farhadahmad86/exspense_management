@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2025 at 06:32 PM
+-- Generation Time: Feb 19, 2025 at 11:31 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -5055,7 +5055,13 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `ev
 (4989, 'default', 'updated', 'App\\Models\\ProductsModel', 'updated', 3, 'App\\Models\\User', 1, '{\"attributes\":{\"par_name\":\"Dalda\",\"par_purchase_price\":850,\"par_bottom_price\":null,\"par_sale_price\":850,\"par_total_qty\":0,\"par_status\":\"Opening\"},\"old\":{\"par_name\":\"Dalda\",\"par_purchase_price\":850,\"par_bottom_price\":null,\"par_sale_price\":850,\"par_total_qty\":5,\"par_status\":\"Opening\"}}', NULL, '2025-01-14 06:22:43', '2025-01-14 06:22:43'),
 (4990, 'default', 'created', 'App\\Models\\StockModel', 'created', 1575, 'App\\Models\\User', 1, '{\"attributes\":{\"sto_par_id\":3,\"sto_job_id\":null,\"sto_in\":\"0.00\",\"sto_out\":\"5.00\",\"sto_hold\":\"0.00\",\"sto_total\":\"54.00\"}}', NULL, '2025-01-14 06:22:43', '2025-01-14 06:22:43'),
 (4991, 'default', 'created', 'App\\Models\\User', 'created', 14, 'App\\Models\\User', 1, '{\"attributes\":{\"name\":\"Farhad Ahmad\",\"f_name\":\"Muhammad  Dilshad\",\"address\":\"bhakkar\",\"login_status\":0,\"gender\":\"Male\",\"email\":\"farhad@gmail.com\",\"employee_status\":\"1\",\"number\":\"0313-1331313\",\"work_status\":null}}', NULL, '2025-02-16 15:31:05', '2025-02-16 15:31:05'),
-(4992, 'default', 'created', 'App\\Models\\User', 'created', 15, 'App\\Models\\User', 1, '{\"attributes\":{\"name\":\"Rehan\",\"f_name\":\"M Dilshad\",\"address\":\"sdfasdfdsf\",\"login_status\":0,\"gender\":\"Male\",\"email\":\"rehan@gmail.com\",\"employee_status\":\"1\",\"number\":\"0313-1331331\",\"work_status\":null}}', NULL, '2025-02-16 15:33:54', '2025-02-16 15:33:54');
+(4992, 'default', 'created', 'App\\Models\\User', 'created', 15, 'App\\Models\\User', 1, '{\"attributes\":{\"name\":\"Rehan\",\"f_name\":\"M Dilshad\",\"address\":\"sdfasdfdsf\",\"login_status\":0,\"gender\":\"Male\",\"email\":\"rehan@gmail.com\",\"employee_status\":\"1\",\"number\":\"0313-1331331\",\"work_status\":null}}', NULL, '2025-02-16 15:33:54', '2025-02-16 15:33:54'),
+(4993, 'default', 'created', 'App\\Models\\User', 'created', 16, 'App\\Models\\User', 1, '{\"attributes\":{\"name\":\"hamza\",\"f_name\":\"tahir iqbal\",\"address\":\"bhakkkar\",\"login_status\":0,\"gender\":\"Male\",\"email\":\"hamza@gmail.com\",\"employee_status\":\"1\",\"number\":\"0131-3333131\",\"work_status\":null}}', NULL, '2025-02-19 17:20:37', '2025-02-19 17:20:37'),
+(4994, 'default', 'created', 'App\\Models\\User', 'created', 17, 'App\\Models\\User', 1, '{\"attributes\":{\"name\":\"shahroz\",\"f_name\":\"Abid\",\"address\":\"Bhakkar\",\"login_status\":0,\"gender\":\"Male\",\"email\":\"shahroz@gmail.com\",\"employee_status\":\"1\",\"number\":\"1313-3131131\",\"work_status\":null}}', NULL, '2025-02-19 17:21:31', '2025-02-19 17:21:31'),
+(4995, 'default', 'created', 'App\\Models\\User', 'created', 18, 'App\\Models\\User', 1, '{\"attributes\":{\"name\":\"Haseeb\",\"f_name\":\"Shahaab\",\"address\":\"Bhakkar\",\"login_status\":0,\"gender\":\"Male\",\"email\":\"haseeb@gmail.com\",\"employee_status\":\"1\",\"number\":\"3131-3131331\",\"work_status\":null}}', NULL, '2025-02-19 17:23:11', '2025-02-19 17:23:11'),
+(4996, 'default', 'created', 'App\\Models\\User', 'created', 19, 'App\\Models\\User', 1, '{\"attributes\":{\"name\":\"Aamir\",\"f_name\":\"Manzoor\",\"address\":\"bhakkar\",\"login_status\":0,\"gender\":\"Male\",\"email\":\"aamir@gmail.com\",\"employee_status\":\"1\",\"number\":\"5454-5454545\",\"work_status\":null}}', NULL, '2025-02-19 17:24:06', '2025-02-19 17:24:06'),
+(4997, 'default', 'created', 'App\\Models\\User', 'created', 20, 'App\\Models\\User', 1, '{\"attributes\":{\"name\":\"wahab\",\"f_name\":\"shahaab\",\"address\":\"bhakkar\",\"login_status\":0,\"gender\":\"Male\",\"email\":\"wahab@gmail.com\",\"employee_status\":\"1\",\"number\":\"5554-5545454\",\"work_status\":null}}', NULL, '2025-02-19 17:24:45', '2025-02-19 17:24:45'),
+(4998, 'default', 'created', 'App\\Models\\User', 'created', 21, 'App\\Models\\User', 1, '{\"attributes\":{\"name\":\"hadeed\",\"f_name\":\"Ashraf\",\"address\":\"Bhakkar\",\"login_status\":0,\"gender\":\"Male\",\"email\":\"hadeed@gmail.com\",\"employee_status\":\"1\",\"number\":\"5454-5454545\",\"work_status\":null}}', NULL, '2025-02-19 17:25:26', '2025-02-19 17:25:26');
 
 -- --------------------------------------------------------
 
@@ -5078,14 +5084,6 @@ CREATE TABLE `attendances` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `attendances`
---
-
-INSERT INTO `attendances` (`id`, `user_id`, `date`, `check_in`, `check_in_status`, `break_out`, `break_out_status`, `break_in`, `break_in_status`, `check_out`, `check_out_status`, `created_at`, `updated_at`) VALUES
-(4, 2, '2025-02-17', '07:03:53', 'Late', NULL, 'On time', NULL, 'Break', NULL, NULL, '2025-02-17 16:45:40', '2025-02-17 17:08:20'),
-(5, 2, '2025-02-19', '23:19:23', 'Late', NULL, 'On time', NULL, 'Break', NULL, NULL, '2025-02-19 10:22:38', '2025-02-19 10:22:38');
 
 -- --------------------------------------------------------
 
@@ -6030,7 +6028,13 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (6, 'App\\Models\\User', 12),
 (7, 'App\\Models\\User', 13),
 (7, 'App\\Models\\User', 14),
-(7, 'App\\Models\\User', 15);
+(7, 'App\\Models\\User', 15),
+(7, 'App\\Models\\User', 16),
+(7, 'App\\Models\\User', 17),
+(7, 'App\\Models\\User', 18),
+(7, 'App\\Models\\User', 19),
+(7, 'App\\Models\\User', 20),
+(7, 'App\\Models\\User', 21);
 
 -- --------------------------------------------------------
 
@@ -9648,6 +9652,7 @@ INSERT INTO `stock` (`sto_id`, `sto_par_id`, `sto_job_id`, `sto_user_id`, `sto_t
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `finger_print_id` int(11) DEFAULT NULL,
   `name` varchar(191) NOT NULL,
   `f_name` varchar(191) DEFAULT NULL,
   `email` varchar(191) NOT NULL,
@@ -9678,15 +9683,21 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `f_name`, `email`, `username`, `gender`, `number`, `cnic`, `address`, `basic_salary`, `role`, `assign_modular_grp`, `type`, `password`, `confirm_password`, `login_status`, `employee_status`, `email_verified_at`, `company_id`, `ip_address`, `browser_info`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'MasterFarhad', NULL, 'master1@gmail.com', 'master1', NULL, '0313-2025252', '', NULL, NULL, '1', NULL, 'Master', '$2y$10$KE9PzdJsNaywMfhteLTReefnpYaizQESMsnQlUYkg3hd10V0d77uq', '$2y$10$OnlfmX.apbKMjNyuAFnszO9FYcL8YKQoWyBUGP2aJaLAigjgpw0ey', 1, '1', NULL, '1', NULL, NULL, NULL, '2024-08-14 08:17:11', '2024-08-14 08:17:11', NULL),
-(2, 'sadmin', 'sadmin', 'sadmin1@gmail.com', 'sadmin1', 'Male', '0313-2025252', '54554-5545545-5', '4544444444444444444444sadfdsfadsfdsf', NULL, '1', NULL, 'Employee', '$2y$10$pIZFWMi59.BqZjLG6WiWBeQPcqs/8K6muYp09f0PXU30YvT/bDkGu', '$2y$10$qRtzKS6OteSMnBKQeTtTDurhxYilfJqYCNFSbJdq1yQYlCf96Ci9K', 1, '1', NULL, '1', '::1', 'Desktop Device \r\nChrome browser | Version:- 127.0.0.0', NULL, '2024-08-14 08:17:11', '2024-08-14 15:46:27', NULL),
-(4, 'farhad', 'dilshad', 'farhadsfz86@gmail.com', 'farhad', 'Male', '0313-1313313', '12121-2121212-1', 'asdfdsfadsf', NULL, '3', NULL, 'Employee', '$2y$10$pIZFWMi59.BqZjLG6WiWBeQPcqs/8K6muYp09f0PXU30YvT/bDkGu', '$2y$10$mDzjv2j5H4RFiCBXYlHqzuohnS9zo6u/X2lECJDaE4OXWdJV8hueO', 1, '1', NULL, '1', '::1', 'Desktop Device \r\nChrome browser | Version:- 127.0.0.0', NULL, '2024-08-14 09:58:46', '2024-08-14 14:58:46', NULL),
-(11, 'MasterAzeem&sons', NULL, 'masterAzeem&sons@gmail.com', 'masterAzeem&sons', NULL, '0313-3133133', '', NULL, NULL, '1', NULL, 'Master', '$2y$10$yyLS7ygYphApXHfZUIULnuTfkH26ayDPV6OobYUUgA1SW9j2UjH2i', '$2y$10$tlWPSOgDTrzgAuxh1OjAhu3DUiUsdhnVAO4XXdYHZBbnYOpZMv8nq', 1, '1', NULL, '4', NULL, NULL, NULL, '2024-09-06 13:21:33', '2024-09-06 13:21:33', NULL),
-(12, 'sadminAzeem&sons', 'azeem', 'Azeem&sons@gmail.com', 'Azeem&sons', 'Male', '0313-3133133', '45545-4545454-5', 'Islamabad', NULL, '6', NULL, 'Employee', '$2y$10$fK.C5f8Px6R5q0SeJ..DS.GW5ns9yXUS/Yc.DnMbjMPJTi2bwafoK', '$2y$10$s.P6bGhkA4b5fAwSW4olHeUdIA70ZQ4Q45.4AFBbnzisg3ED6Owu2', 1, '1', NULL, '4', '182.188.55.167', 'Desktop Device \nChrome browser | Version:- 128.0.0.0', NULL, '2024-09-06 13:21:33', '2024-09-13 20:06:00', NULL),
-(13, 'Zuhair', 'Saleem', 'zuhairmughal0@gmail.com', 'zuhairx0', 'Male', '0316-6763345', '10123-5465224-4', 'na', NULL, '7', NULL, 'Employee', '$2y$10$2qsCYwi.aIxW6sXE0e7Ilud8JLtLLqw0dk969xzTafQKMKxsXgrLm', '$2y$10$wFvXG5G0TnQIJrgsy3rUc.YA/TJp0PWWBGFw9GuzTHAmFYsAlpozK', 0, '1', NULL, '1', '110.39.163.74', 'Desktop Device \nChrome browser | Version:- 128.0.0.0', NULL, '2024-09-09 16:57:39', '2024-09-09 21:58:09', NULL),
-(14, 'Farhad Ahmad', 'Muhammad  Dilshad', 'farhad@gmail.com', NULL, 'Male', '0313-1331313', '38101-9128971-5', 'bhakkar', '70000', '7', NULL, 'Employee', '$2y$10$mlFiiBvHEhcePDoTo46ow.pVLX41bGobZ9sX5YTCPQj1XW0PPhr6W', '$2y$10$T775EoWL5Q/nTKH5iWN5OOAYcts1apOvQRrDnlwPoOFVBBIy3wt4.', 0, '1', NULL, '1', '::1', 'Desktop Device \r\nChrome browser | Version:- 133.0.0.0', NULL, '2025-02-16 15:31:05', '2025-02-16 20:31:05', NULL),
-(15, 'Rehan', 'M Dilshad', 'rehan@gmail.com', NULL, 'Male', '0313-1331331', '13313-1313113-3', 'sdfasdfdsf', '35000', '7', NULL, 'Employee', '$2y$10$IgPjlyOYJKFwhTtJDgakLOwDwMzdUHl8TZuwOSQ4x7AT8rXHxXeSu', '$2y$10$68afCIrkfeswsXUlO.thG.bjQy765TLEckqyM0ejUAJJ18kKNXYly', 0, '1', NULL, '1', '::1', 'Desktop Device \r\nChrome browser | Version:- 133.0.0.0', NULL, '2025-02-16 15:33:54', '2025-02-16 20:33:54', NULL);
+INSERT INTO `users` (`id`, `finger_print_id`, `name`, `f_name`, `email`, `username`, `gender`, `number`, `cnic`, `address`, `basic_salary`, `role`, `assign_modular_grp`, `type`, `password`, `confirm_password`, `login_status`, `employee_status`, `email_verified_at`, `company_id`, `ip_address`, `browser_info`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, NULL, 'MasterFarhad', NULL, 'master1@gmail.com', 'master1', NULL, '0313-2025252', '', NULL, NULL, '1', NULL, 'Master', '$2y$10$KE9PzdJsNaywMfhteLTReefnpYaizQESMsnQlUYkg3hd10V0d77uq', '$2y$10$OnlfmX.apbKMjNyuAFnszO9FYcL8YKQoWyBUGP2aJaLAigjgpw0ey', 1, '1', NULL, '1', NULL, NULL, NULL, '2024-08-14 08:17:11', '2024-08-14 08:17:11', NULL),
+(2, NULL, 'sadmin', 'sadmin', 'sadmin1@gmail.com', 'sadmin1', 'Male', '0313-2025252', '54554-5545545-5', '4544444444444444444444sadfdsfadsfdsf', NULL, '1', NULL, 'Employee', '$2y$10$pIZFWMi59.BqZjLG6WiWBeQPcqs/8K6muYp09f0PXU30YvT/bDkGu', '$2y$10$qRtzKS6OteSMnBKQeTtTDurhxYilfJqYCNFSbJdq1yQYlCf96Ci9K', 1, '1', NULL, '1', '::1', 'Desktop Device \r\nChrome browser | Version:- 127.0.0.0', NULL, '2024-08-14 08:17:11', '2024-08-14 15:46:27', NULL),
+(4, NULL, 'farhad', 'dilshad', 'farhadsfz86@gmail.com', 'farhad', 'Male', '0313-1313313', '12121-2121212-1', 'asdfdsfadsf', NULL, '3', NULL, 'Employee', '$2y$10$pIZFWMi59.BqZjLG6WiWBeQPcqs/8K6muYp09f0PXU30YvT/bDkGu', '$2y$10$mDzjv2j5H4RFiCBXYlHqzuohnS9zo6u/X2lECJDaE4OXWdJV8hueO', 1, '1', NULL, '1', '::1', 'Desktop Device \r\nChrome browser | Version:- 127.0.0.0', NULL, '2024-08-14 09:58:46', '2024-08-14 14:58:46', NULL),
+(11, NULL, 'MasterAzeem&sons', NULL, 'masterAzeem&sons@gmail.com', 'masterAzeem&sons', NULL, '0313-3133133', '', NULL, NULL, '1', NULL, 'Master', '$2y$10$yyLS7ygYphApXHfZUIULnuTfkH26ayDPV6OobYUUgA1SW9j2UjH2i', '$2y$10$tlWPSOgDTrzgAuxh1OjAhu3DUiUsdhnVAO4XXdYHZBbnYOpZMv8nq', 1, '1', NULL, '4', NULL, NULL, NULL, '2024-09-06 13:21:33', '2024-09-06 13:21:33', NULL),
+(12, NULL, 'sadminAzeem&sons', 'azeem', 'Azeem&sons@gmail.com', 'Azeem&sons', 'Male', '0313-3133133', '45545-4545454-5', 'Islamabad', NULL, '6', NULL, 'Employee', '$2y$10$fK.C5f8Px6R5q0SeJ..DS.GW5ns9yXUS/Yc.DnMbjMPJTi2bwafoK', '$2y$10$s.P6bGhkA4b5fAwSW4olHeUdIA70ZQ4Q45.4AFBbnzisg3ED6Owu2', 1, '1', NULL, '4', '182.188.55.167', 'Desktop Device \nChrome browser | Version:- 128.0.0.0', NULL, '2024-09-06 13:21:33', '2024-09-13 20:06:00', NULL),
+(13, NULL, 'Zuhair', 'Saleem', 'zuhairmughal0@gmail.com', 'zuhairx0', 'Male', '0316-6763345', '10123-5465224-4', 'na', NULL, '7', NULL, 'Employee', '$2y$10$2qsCYwi.aIxW6sXE0e7Ilud8JLtLLqw0dk969xzTafQKMKxsXgrLm', '$2y$10$wFvXG5G0TnQIJrgsy3rUc.YA/TJp0PWWBGFw9GuzTHAmFYsAlpozK', 0, '1', NULL, '1', '110.39.163.74', 'Desktop Device \nChrome browser | Version:- 128.0.0.0', NULL, '2024-09-09 16:57:39', '2024-09-09 21:58:09', NULL),
+(14, 9, 'Farhad Ahmad', 'Muhammad  Dilshad', 'farhad@gmail.com', NULL, 'Male', '0313-1331313', '38101-9128971-5', 'bhakkar', '50000', '7', NULL, 'Employee', '$2y$10$mlFiiBvHEhcePDoTo46ow.pVLX41bGobZ9sX5YTCPQj1XW0PPhr6W', '$2y$10$T775EoWL5Q/nTKH5iWN5OOAYcts1apOvQRrDnlwPoOFVBBIy3wt4.', 0, '1', NULL, '1', '::1', 'Desktop Device \r\nChrome browser | Version:- 133.0.0.0', NULL, '2025-02-16 15:31:05', '2025-02-16 20:31:05', NULL),
+(15, 8, 'Rehan', 'M Dilshad', 'rehan@gmail.com', NULL, 'Male', '0313-1331331', '13313-1313113-3', 'sdfasdfdsf', '35000', '7', NULL, 'Employee', '$2y$10$IgPjlyOYJKFwhTtJDgakLOwDwMzdUHl8TZuwOSQ4x7AT8rXHxXeSu', '$2y$10$68afCIrkfeswsXUlO.thG.bjQy765TLEckqyM0ejUAJJ18kKNXYly', 0, '1', NULL, '1', '::1', 'Desktop Device \r\nChrome browser | Version:- 133.0.0.0', NULL, '2025-02-16 15:33:54', '2025-02-16 20:33:54', NULL),
+(16, 2, 'hamza', 'tahir iqbal', 'hamza@gmail.com', NULL, 'Male', '0131-3333131', '13133-1313131-3', 'bhakkkar', '20000', '7', NULL, 'Employee', '$2y$10$SNt6Oq6kKQxdliXCLLa.mexqnlXfMVwdRIREat0GDy7kFaG4WJDgu', '$2y$10$B467G9f/VlEi8YM6/0ROmutw01ApE2AkiALvyy9Ys19kW4SC8lTh.', 0, '1', NULL, '1', NULL, NULL, NULL, '2025-02-19 17:20:36', '2025-02-19 22:20:36', NULL),
+(17, 3, 'shahroz', 'Abid', 'shahroz@gmail.com', NULL, 'Male', '1313-3131131', '13131-3131313-3', 'Bhakkar', '15000', '7', NULL, 'Employee', '$2y$10$5qCsOycoUAm7GnzOTfTcZ.ljmW8/odxolAFyyMmzpMwucs7EV845G', '$2y$10$q/2PW9Z2VaUitwvBXZeYjeVC0kPjd9lKJez8.NIOiP2JrmQGmFBTa', 0, '1', NULL, '1', NULL, NULL, NULL, '2025-02-19 17:21:31', '2025-02-19 22:21:31', NULL),
+(18, 4, 'Haseeb', 'Shahaab', 'haseeb@gmail.com', NULL, 'Male', '3131-3131331', '13131-3131313-1', 'Bhakkar', '15000', '7', NULL, 'Employee', '$2y$10$2glK3ARHBp4po1jdmQHI/OWwkTB/cIqrOwOp04/puHntxxKyjADSW', '$2y$10$h6R6ISGqk94WQCkcQjCr6ucpbVCzuNuPEUn9//.rCUpqE6lZZt3Da', 0, '1', NULL, '1', NULL, NULL, NULL, '2025-02-19 17:23:11', '2025-02-19 22:23:11', NULL),
+(19, 5, 'Aamir', 'Manzoor', 'aamir@gmail.com', NULL, 'Male', '5454-5454545', '54545-4545454-5', 'bhakkar', '15000', '7', NULL, 'Employee', '$2y$10$YEXtuBP0/Ya4oc5IgL6oCOKm//bpFXbK5E6KU4pb.yoSDJYqu4qaS', '$2y$10$gaE5sRLAi34DnC1D7oXofuKng88oyElEKJhNOhT20IDHpRdqcI5Ui', 0, '1', NULL, '1', NULL, NULL, NULL, '2025-02-19 17:24:06', '2025-02-19 22:24:06', NULL),
+(20, 6, 'wahab', 'shahaab', 'wahab@gmail.com', NULL, 'Male', '5554-5545454', '54545-4545454-4', 'bhakkar', '15000', '7', NULL, 'Employee', '$2y$10$lnAnTsN.Q3F6UoXov7gTBebZHqlUVF0Fu7t5hgy8yNTtA3Z6gElPe', '$2y$10$v6QmY9fkk4NuxIQW7g39zOcXQ0kyDfGMUcRZNkPsYL1lyxvAW3sNi', 0, '1', NULL, '1', NULL, NULL, NULL, '2025-02-19 17:24:45', '2025-02-19 22:24:45', NULL),
+(21, 7, 'hadeed', 'Ashraf', 'hadeed@gmail.com', NULL, 'Male', '5454-5454545', '54545-4545454-5', 'Bhakkar', '15000', '7', NULL, 'Employee', '$2y$10$79DqRdnFmxTT9xTPV6c/de/krvs2sYilyQgn4QODwDV2VdfYvNKiq', '$2y$10$/ciubnh10TI5loTsitizOeBh191Vfq4ONhNlKc9FyiVQk8ZdQ732a', 0, '1', NULL, '1', NULL, NULL, NULL, '2025-02-19 17:25:26', '2025-02-19 22:25:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -9925,13 +9936,13 @@ ALTER TABLE `zkteco_devices`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4993;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4999;
 
 --
 -- AUTO_INCREMENT for table `attendances`
 --
 ALTER TABLE `attendances`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `cash_account`
@@ -10081,7 +10092,7 @@ ALTER TABLE `stock`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `zkteco_devices`

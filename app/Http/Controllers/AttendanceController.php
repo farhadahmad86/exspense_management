@@ -40,47 +40,53 @@ class AttendanceController extends Controller
     }
 
     // Fetch Attendance from ZKTeco Device
-    public function fetchAttendanceFromZKTeco()
-{
-    $zk = new ZKTeco('192.168.110.200', 4370, 5);
+   public function fetchAttendanceFromZKTeco()
+    {
+        $zk = new ZKTeco('192.168.110.200', 4370, 5);
 
-    if ($zk->connect()) {
-        $attendances = $zk->getAttendance();
-        dd($attendances);
+        if ($zk->connect()) {
+            $attendances = $zk->getAttendance();
+            // dd($attendances); // Debugging: Uncomment to check response
 
-        foreach ($attendances as $att) {
-            $user = User::where('id', $att['id'])->first();
+            foreach ($attendances as $att) {
+                $user = User::where('finger_print_id', $att['id'])->first();
 
-            if ($user) {
-                $attendanceTime = Carbon::parse($att['timestamp'])->setTimezone('Asia/Karachi');
+                if ($user) {
+                    // Convert from Pakistan Time (Asia/Karachi) to America/Denver
+                    $attendanceTime = Carbon::parse($att['timestamp'], 'Asia/Karachi') // Set as Pakistan Time
+                        ->setTimezone('America/Denver'); // Convert to Denver Time
 
-                // Fetch existing attendance record or create a new one
-                $attendance = Attendance::firstOrNew([
-                    'user_id' => $user->id,
-                    'date' => Carbon::now()->toDateString(),
-                ]);
+                    // Fetch existing attendance record or create a new one
+                    $attendance = Attendance::firstOrNew([
+                        'user_id' => $user->finger_print_id,
+                        'date' => $attendanceTime->toDateString(), // Save date in America/Denver time zone
+                    ]);
 
-                // Update only the relevant field
-                if ($att['work_code_label'] == 'Check-in') {
-                    $attendance->check_in = $attendanceTime->toTimeString();
-                    $attendance->check_in_status = ($attendanceTime->format('H:i') >= '06:06') ? 'Late' : 'Present';
-                } elseif ($att['work_code_label'] == 'Break-in') {
-                    $attendance->break_in_status = 'Break';
-                } elseif ($att['work_code_label'] == 'Break-out') {
-                    $attendance->break_out_status = ($attendanceTime->format('H:i') <= '10:00') ? 'On time' : 'Break Late';
-                } elseif ($att['work_code_label'] == 'Check-out') {
-                    $attendance->check_out_status = ($attendanceTime->format('H:i') >= '15:00') ? 'Check-out' : null;
+                    // Update fields based on work_code_label
+                    if ($att['work_code_label'] == 'Check-in') {
+                        $attendance->check_in = $attendanceTime->toTimeString();
+                        $attendance->check_in_status = ($attendanceTime->format('H:i') >= '06:06') ? 'Late' : 'Present';
+                    } elseif ($att['work_code_label'] == 'Break-in') {
+                        $attendance->break_in = $attendanceTime->toTimeString();
+                        $attendance->break_in_status = 'Break';
+                    } elseif ($att['work_code_label'] == 'Break-out') {
+                        $attendance->break_out = $attendanceTime->toTimeString();
+                        $attendance->break_out_status = ($attendanceTime->format('H:i') <= '10:00') ? 'On time' : 'Break Late';
+                    } elseif ($att['work_code_label'] == 'Check-out') {
+                        $attendance->check_out = $attendanceTime->toTimeString();
+                        $attendance->check_out_status = ($attendanceTime->format('H:i') >= '15:00') ? 'Check-out' : 'Check-out-quickly';
+                    }
+
+                    $attendance->save(); // Save updated record
                 }
-
-                $attendance->save(); // Save only the updated field
             }
-        }
 
-        return redirect()->back()->with('success', 'Attendance Synced Successfully');
-    } else {
-        return redirect()->back()->withErrors(['success' => 'Unable to connect to the device']);
+            return redirect()->back()->with('success', 'Attendance Synced Successfully');
+        } else {
+            return redirect()->back()->withErrors(['error' => 'Unable to connect to the device']);
+        }
     }
-}
+
 
 
 }

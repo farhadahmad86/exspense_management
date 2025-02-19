@@ -173,15 +173,15 @@ class EmployeeRegistrationController extends Controller
             // coding from shahzaib start
             $tbl_var_name = 'EmployeeRegistration';
             $prfx = '';
-            $brwsr_rslt = $this->getBrwsrInfo();
-            $clientIP = $this->get_ip();
+            // $brwsr_rslt = $this->getBrwsrInfo();
+            // $clientIP = $this->get_ip();
 
-            $brwsr_col = $prfx . 'browser_info';
-            $ip_col = $prfx . 'ip_address';
+            // $brwsr_col = $prfx . 'browser_info';
+            // $ip_col = $prfx . 'ip_address';
             $updt_date_col = $prfx . 'updated_at';
 
-            $$tbl_var_name->$brwsr_col = $brwsr_rslt;
-            $$tbl_var_name->$ip_col = $clientIP;
+            // $$tbl_var_name->$brwsr_col = $brwsr_rslt;
+            // $$tbl_var_name->$ip_col = $clientIP;
             $$tbl_var_name->$updt_date_col = Carbon::now('GMT+5');
             // coding from shahzaib end
 
@@ -279,16 +279,16 @@ class EmployeeRegistrationController extends Controller
 
             // coding from shahzaib start
             $tbl_var_name = 'employee_registration';
-            $prfx = '';
-            $brwsr_rslt = $this->getBrwsrInfo();
-            $clientIP = $this->get_ip();
+            // $prfx = '';
+            // $brwsr_rslt = $this->getBrwsrInfo();
+            // $clientIP = $this->get_ip();
 
-            $brwsr_col = $prfx . 'browser_info';
-            $ip_col = $prfx . 'ip_address';
-            $updt_date_col = $prfx . 'updated_at';
+            // $brwsr_col = $prfx . 'browser_info';
+            // $ip_col = $prfx . 'ip_address';
+            // $updt_date_col = $prfx . 'updated_at';
 
-            $$tbl_var_name->$brwsr_col = $brwsr_rslt;
-            $$tbl_var_name->$ip_col = $clientIP;
+            // $$tbl_var_name->$brwsr_col = $brwsr_rslt;
+            // $$tbl_var_name->$ip_col = $clientIP;
             $$tbl_var_name->$updt_date_col = Carbon::now('GMT+5');
             // coding from shahzaib end
 
