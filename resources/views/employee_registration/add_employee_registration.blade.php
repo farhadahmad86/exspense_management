@@ -118,6 +118,12 @@
                                                     <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address..">
                                                 </div>
                                             </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="basic_salary">Basic Salary <span class="text-danger">*</span></label>
+                                                    <input type="number" class="form-control" id="basic_salary" name="basic_salary" placeholder="Enter Address..">
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <h5 class="mb-3">Login Information:</h5>
@@ -223,6 +229,7 @@
                 cnic = document.getElementById("cnic"),
                 number = document.getElementById("number"),
                 address = document.getElementById("address"),
+                basic_salary = document.getElementById("basic_salary"),
                 // email = document.getElementById("email"),
                 // password = document.getElementById("password"),
                 // confirm_password = document.getElementById("confirm_password"),
@@ -238,6 +245,7 @@
                     male.id,
                     female.id,
                     cnic.id,
+                    basic_salary.id,
                     // email.id,
                     // password.id,
                     // confirm_password.id,

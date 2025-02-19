@@ -141,6 +141,7 @@ class EmployeeRegistrationController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         DB::transaction(function () use ($request) {
             $this->validation($request);
 
@@ -155,6 +156,7 @@ class EmployeeRegistrationController extends Controller
             $EmployeeRegistration->name = $request->name;
             $EmployeeRegistration->f_name = $request->father_name;
             $EmployeeRegistration->address = $request->address;
+            $EmployeeRegistration->basic_salary = $request->basic_salary;
             $EmployeeRegistration->password = bcrypt($request->password);
             $EmployeeRegistration->confirm_password = bcrypt($request->confirm_password);
             $EmployeeRegistration->login_status = $var_status;

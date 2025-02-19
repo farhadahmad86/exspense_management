@@ -40,8 +40,10 @@
         "barryvdh/laravel-dompdf": "^3.0",
         "guzzlehttp/guzzle": "^7.0",
         "jenssegers/agent": "^2.6",
+        "laradevsbd/zkteco-sdk": "^1.0",
         "laravel/framework": "^10.0",
-        "laravel/ui": "^4.5",
+        "laravel/ui": "^4.6",
+        "maliklibs/zkteco": "dev-main",
         "spatie/laravel-activitylog": "^4.8",
         "spatie/laravel-permission": "^6.9"
     },

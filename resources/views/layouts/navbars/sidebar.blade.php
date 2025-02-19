@@ -92,19 +92,19 @@
                             @if (Gate::any(['sale-purchase-party-create', 'sale-purchase-party-list']))
                                 <li>
                                     <a data-toggle="collapse" href="#salepurchaseSubmenu" aria-expanded="{{ Request::is('party*') || Request::is('add_party') ? 'true' : 'false' }}">
-                                        <span class="nav-link-text">Sale Purchase Party</span>
+                                        <span class="nav-link-text">Expense Head</span>
                                         <b class="caret mt-1"></b>
                                     </a>
                                     <div class="collapse {{ Request::is('party*') || Request::is('add_party') ? 'show' : '' }}" id="salepurchaseSubmenu">
                                         <ul class="nav pl-4">
                                             <li class="{{ Route::currentRouteName() == 'add_party' ? 'active' : '' }}">
                                                 <a href="{{ route('add_party') }}">
-                                                    <p>Create Sale Purchase Party</p>
+                                                    <p>Create Expense Head</p>
                                                 </a>
                                             </li>
                                             <li class="{{ Route::currentRouteName() == 'party_list' ? 'active' : '' }}">
                                                 <a href="{{ route('party_list') }}">
-                                                    <p>Sale Purchase Party List</p>
+                                                    <p>Expense Head List</p>
                                                 </a>
                                             </li>
                                         </ul>

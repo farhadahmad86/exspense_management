@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AttendanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -137,4 +138,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/company_list', [App\Http\Controllers\CompanyController::class, 'company_list'])->name('company_list');
     });
 
+
+    
+
+    Route::get('/attendance', [AttendanceController::class, 'index'])->name('attendance.index');
+    Route::post('/attendance/store', [AttendanceController::class, 'store'])->name('attendance.store');
+    Route::get('/attendance/sync', [AttendanceController::class, 'fetchAttendanceFromZKTeco'])->name('attendance.sync');
+
+
+
+
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
