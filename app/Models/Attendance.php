@@ -25,10 +25,10 @@ class Attendance extends Model
     ];
 
     /**
-     * Relationship with User model
+     * Relationship with User model using finger_print_id
      */
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'finger_print_id');
     }
 }
