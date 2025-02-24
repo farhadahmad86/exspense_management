@@ -9,7 +9,7 @@
             <div class="row page-titles mx-0">
                 <div class="col-sm-6 p-md-0">
                     <div class="welcome-text">
-                        <p class="mb-1">Edit Sale/Purchase Party</p>
+                        <p class="mb-1">Edit Expense Head</p>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Edit Sale/Purchase Party</h4>
+                            <h4 class="card-title">Edit Expense Head</h4>
                         </div>
                         <div class="card-body">
                             <div class="form-validation">

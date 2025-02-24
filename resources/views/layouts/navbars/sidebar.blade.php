@@ -89,7 +89,7 @@
                                     </div>
                                 </li>
                             @endif
-                            @if (Gate::any(['sale-purchase-party-create', 'sale-purchase-party-list']))
+                            @if (Gate::any(['Expense-Head-Create', 'Expense-Head-List']))
                                 <li>
                                     <a data-toggle="collapse" href="#salepurchaseSubmenu" aria-expanded="{{ Request::is('party*') || Request::is('add_party') ? 'true' : 'false' }}">
                                         <span class="nav-link-text">Expense Head</span>
@@ -111,49 +111,17 @@
                                     </div>
                                 </li>
                             @endif
-                            @if (Gate::any(['product-registration-create', 'product-registration-list']))
+                            @if (Gate::any(['attendance-create']))
                                 <li>
-                                    <a data-toggle="collapse" href="#productSubmenu" aria-expanded="{{ Request::is('product_reg*') || Route::currentRouteName() == 'add_openning' ? 'true' : 'false' }}">
-                                        <span class="nav-link-text">Product</span>
+                                    <a data-toggle="collapse" href="#purchaseinvoiceSubmenu" aria-expanded="{{ Request::is('attendance*') ? 'true' : 'false' }}">
+                                        <span class="nav-link-text">Attendance</span>
                                         <b class="caret mt-1"></b>
                                     </a>
-                                    <div class="collapse {{ Request::is('product_reg*') || Route::currentRouteName() == 'add_openning' ? 'show' : '' }}" id="productSubmenu">
+                                    <div class="collapse {{ Request::is('attendance*') ? 'show' : '' }}" id="purchaseinvoiceSubmenu">
                                         <ul class="nav pl-4">
-                                            <li class="{{ Route::currentRouteName() == 'product_registration.create' ? 'active' : '' }}">
-                                                <a href="{{ route('product_registration.create') }}">
-                                                    <p>Create Product</p>
-                                                </a>
-                                            </li>
-                                            <li class="{{ Route::currentRouteName() == 'product_registration.index' ? 'active' : '' }}">
-                                                <a href="{{ route('product_registration.index') }}">
-                                                    <p>Product List</p>
-                                                </a>
-                                            </li>
-                                            <li class="{{ Route::currentRouteName() == 'add_openning' ? 'active' : '' }}">
-                                                <a href="{{ route('add_openning') }}">
-                                                    <p>Opening Stock</p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            @endif
-                            @if (Gate::any(['purchase-invoice-create', 'purchase-invoice-list']))
-                                <li>
-                                    <a data-toggle="collapse" href="#purchaseinvoiceSubmenu" aria-expanded="{{ Request::is('purchase_invoice*') ? 'true' : 'false' }}">
-                                        <span class="nav-link-text">Purchase Invoice</span>
-                                        <b class="caret mt-1"></b>
-                                    </a>
-                                    <div class="collapse {{ Request::is('purchase_invoice*') ? 'show' : '' }}" id="purchaseinvoiceSubmenu">
-                                        <ul class="nav pl-4">
-                                            <li class="{{ Route::currentRouteName() == 'purchase_invoice.create' ? 'active' : '' }}">
-                                                <a href="{{ route('purchase_invoice.create') }}">
-                                                    <p>Create Purchase Invoice</p>
-                                                </a>
-                                            </li>
-                                            <li class="{{ Route::currentRouteName() == 'purchase_invoice.index' ? 'active' : '' }}">
-                                                <a href="{{ route('purchase_invoice.index') }}">
-                                                    <p>Purchase Invoice List</p>
+                                            <li class="{{ Route::currentRouteName() == 'attendance.index' ? 'active' : '' }}">
+                                                <a href="{{ route('attendance.index') }}">
+                                                    <p>attendance</p>
                                                 </a>
                                             </li>
                                         </ul>

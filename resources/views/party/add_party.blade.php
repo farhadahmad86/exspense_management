@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('Add Sale/Purchase Party'), 'pageSlug' => 'users', 'section' => 'users'])
+@extends('layouts.app', ['page' => __('Add Expense Head'), 'pageSlug' => 'users', 'section' => 'users'])
 
 @section('content')
     <!--**********************************
@@ -9,7 +9,7 @@
             <div class="row page-titles mx-0">
                 <div class="col-sm-6 p-md-0">
                     <div class="welcome-text">
-                        <p class="mb-1">Sale/Purchase Party Registration</p>
+                        <p class="mb-1">Add Expense Head</p>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Sale/Purchase Party Registration</h4>
+                            <h4 class="card-title">Add Expense Head</h4>
                         </div>
                         <div class="card-body">
                             <div class="form-validation">

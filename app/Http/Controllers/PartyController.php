@@ -14,9 +14,9 @@ class PartyController extends Controller
 
     function __construct()
     {
-        $this->middleware('permission:sale-purchase-party-list', ['only' => ['party_list']]);
-        $this->middleware('permission:sale-purchase-party-create', ['only' => ['add_party','store_party']]);
-        $this->middleware('permission:sale-purchase-party-edit', ['only' => ['edit_party','update_party']]);
+        $this->middleware('permission:Expense-Head-List', ['only' => ['party_list']]);
+        $this->middleware('permission:Expense-Head-Create', ['only' => ['add_party','store_party']]);
+        $this->middleware('permission:Expense-Head-Edit', ['only' => ['edit_party','update_party']]);
     }
 
 

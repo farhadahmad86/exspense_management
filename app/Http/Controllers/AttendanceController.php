@@ -10,6 +10,10 @@ use maliklibs\Zkteco\Lib\ZKTeco;
 
 class AttendanceController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:attendance-create', ['only' => ['index', 'show']]);
+    }
     // Fetch Attendance View
     public function index()
     {
@@ -21,19 +25,17 @@ class AttendanceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'user_id' => 'required|exists:users,id',
+            'user_id' => 'required|exists:users,finger_print_id',
             'date' => 'required|date',
-            'check_in' => 'nullable|date_format:H:i',
-            'check_out' => 'nullable|date_format:H:i',
-            'status' => 'required|in:Present,Absent,Late'
+            'status' => 'required|in:Present,Absent,Leave,Half,Late'
         ]);
-
+        // dd($request->all());
         Attendance::create([
             'user_id' => $request->user_id,
             'date' => $request->date,
-            'check_in' => $request->check_in,
-            'check_out' => $request->check_out,
-            'status' => $request->status,
+            // 'check_in' => $request->check_in,
+            // 'check_out' => $request->check_out,
+            'check_in_status' => $request->status,
         ]);
 
         return redirect()->back()->with('success', 'Attendance Recorded Successfully');
@@ -71,7 +73,7 @@ class AttendanceController extends Controller
                         $attendance->break_in_status = 'Break';
                     } elseif ($att['work_code_label'] == 'Break-out') {
                         $attendance->break_out = $attendanceTime->toTimeString();
-                        $attendance->break_out_status = ($attendanceTime->format('H:i') <= '10:00') ? 'On time' : 'Break Late';
+                        $attendance->break_out_status = ($attendanceTime->format('H:i') <= '10:05') ? 'On time' : 'Break Late';
                     } elseif ($att['work_code_label'] == 'Check-out') {
                         $attendance->check_out = $attendanceTime->toTimeString();
                         $attendance->check_out_status = ($attendanceTime->format('H:i') >= '15:00') ? 'Check-out' : 'Check-out-quickly';

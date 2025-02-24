@@ -1,4 +1,4 @@
-@extends('layouts.theme')
+@extends('layouts.app', ['page' => __('Edit Role'), 'pageSlug' => 'users', 'section' => 'users'])
 
 @section('content')
     <style>

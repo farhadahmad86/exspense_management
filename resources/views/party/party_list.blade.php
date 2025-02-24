@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('Party List'), 'pageSlug' => 'users', 'section' => 'users'])
+@extends('layouts.app', ['page' => __('Expense Head List'), 'pageSlug' => 'users', 'section' => 'users'])
 
 @section('content')
 
@@ -40,7 +40,7 @@
             <div class="row page-titles mx-0">
                 <div class="col-sm-6 p-md-0">
                     <div class="welcome-text">
-                        <p class="mb-1">Sale/Purchase Party List</p>
+                        <p class="mb-1">Expense Head List</p>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Sale/Purchase Party List</h4>
+                            <h4 class="card-title">Expense Head List</h4>
                             <!-- Ipartyhim add -->
                             {{--                        <button >--}}
                             <div class="srch_box_opn_icon">
