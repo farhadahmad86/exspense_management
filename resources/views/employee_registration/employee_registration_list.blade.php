@@ -34,8 +34,8 @@
 
 
     <!--**********************************
-                Content body start
-            ***********************************-->
+                    Content body start
+                ***********************************-->
     <div class="content-body">
         <div class="container-fluid">
             <div class="row page-titles mx-0">
@@ -86,7 +86,7 @@
 
                                     <div class=" col-1-5">
                                         <input tabindex="4" type="text" name="name"
-                                               class="form-control form-control-sm" id="name" value="{{$name}}">
+                                            class="form-control form-control-sm" id="name" value="{{ $name }}">
                                     </div>
 
 
@@ -98,11 +98,9 @@
                                     <div class=" col-1-5">
                                         <select id="login_status" name="login_status">
                                             <option value="" selected disabled>Select Status</option>
-                                            <option value="1"
-                                                {{$login_status == '1' ? 'selected' : ''}}>Yes
+                                            <option value="1" {{ $login_status == '1' ? 'selected' : '' }}>Yes
                                             </option>
-                                            <option value="0"
-                                                {{$login_status == '0' ? 'selected' : ''}}>No
+                                            <option value="0" {{ $login_status == '0' ? 'selected' : '' }}>No
                                             </option>
 
 
@@ -117,11 +115,9 @@
 
                                         <select id="emp_status" name="emp_status">
                                             <option value="" selected disabled>Select Status</option>
-                                            <option value="1"
-                                                {{$emp_status == '1' ? 'selected' : ''}}>Yes
+                                            <option value="1" {{ $emp_status == '1' ? 'selected' : '' }}>Yes
                                             </option>
-                                            <option value="0"
-                                                {{$emp_status == '0' ? 'selected' : ''}}>No
+                                            <option value="0" {{ $emp_status == '0' ? 'selected' : '' }}>No
                                             </option>
 
 
@@ -131,8 +127,8 @@
 
                                     <div class="col-0-5">
                                         <div class="form-group">
-                                            <a href="{{route('employee_registration.index')}}"
-                                               class="btn btn-primary btn-sm" id="">
+                                            <a href="{{ route('employee_registration.index') }}"
+                                                class="btn btn-primary btn-sm" id="">
                                                 Clear
                                             </a>
                                         </div>
@@ -153,75 +149,81 @@
 
                             <div class="table-responsive">
                                 <table id="" class="table table-striped table-bordered display table-freez"
-                                       style="min-width: 845px;background: #fff;">
+                                    style="min-width: 845px;background: #fff;">
                                     <thead>
-                                    <tr>
-                                        <th>Sr#</th>
-                                        <th>Name</th>
-                                        <th>Father Name</th>
-                                        <th>Gender</th>
-                                        <th>CNIC</th>
-                                        <th>Number</th>
-                                        <th>Address</th>
-                                        <th>User Email</th>
-                                        <th>Role</th>
-                                        <th>Employee Status</th>
-                                        <th>Login Status</th>
-                                        <th>Actions</th>
-                                    </tr>
+                                        <tr>
+                                            <th>Sr#</th>
+                                            <th>Name</th>
+                                            <th>Father Name</th>
+                                            <th>Gender</th>
+                                            <th>CNIC</th>
+                                            <th>Number</th>
+                                            <th>Address</th>
+                                            <th>User Email</th>
+                                            <th>Salary</th>
+                                            <th>Role</th>
+                                            <th>Employee Status</th>
+                                            <th>Login Status</th>
+                                            <th>Actions</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
 
-                                    @php
-                                        $segmentSr = !empty(app('request')->input('segmentSr')) ? app('request')->input('segmentSr') : '';
-                                        $segmentPg = !empty(app('request')->input('page')) ? app('request')->input('page') : '';
-                                        $sr = !empty($segmentSr) ? $segmentSr * $segmentPg - $segmentSr + 1 : 1;
-                                        $countSeg = !empty($segmentSr) ? $segmentSr : 0;
-                                        $prchsPrc = $slePrc = $avrgPrc = 0;
-                                    @endphp
-
-
-
-                                    @foreach ($query as $employee_registration)
-                                        <tr>
-                                            <td>{{ $sr }}</td>
-                                            <td>{{ $employee_registration->name }}</td>
-                                            <td>{{ $employee_registration->f_name }}</td>
-                                            <td>{{ $employee_registration->gender }}</td>
-                                            <td>{{ $employee_registration->cnic }}</td>
-                                            <td>{{ $employee_registration->number }}</td>
-                                            <td>{{ $employee_registration->address }}</td>
-                                            <td>{{ $employee_registration->email }}</td>
-                                            <td>
-                                                @if (!empty($employee_registration->getRoleNames()))
-                                                    @foreach ($employee_registration->getRoleNames() as $v)
-                                                        {{--                                                        <label class="badge badge-success">{{ $v }}</label> --}}
-                                                        {{ $v }}
-                                                    @endforeach
-                                                @endif
-                                            </td>
-                                            {{--                                            <td>{{$employee_registration->role}}</td> --}}
-                                            <td>{{ $employee_registration->employee_status == 1 ? 'Yes' : 'No' }}</td>
-                                            {{--                                            <td>{{$employee_registration->employee_status}}</td> --}}
-                                            <td>{{ $employee_registration->login_status == 1 ? 'Yes' : 'No' }}</td>
-                                            <td><a
-                                                    href="{{ route('employee_registration.edit', $employee_registration->id) }}"><i
-                                                        class="fas fa-edit"></i></a></td>
-
-                                        </tr>
-
                                         @php
-                                            $sr++;
-                                            !empty($segmentSr) && $countSeg !== '0' ?: $countSeg++;
+                                            $segmentSr = !empty(app('request')->input('segmentSr'))
+                                                ? app('request')->input('segmentSr')
+                                                : '';
+                                            $segmentPg = !empty(app('request')->input('page'))
+                                                ? app('request')->input('page')
+                                                : '';
+                                            $sr = !empty($segmentSr) ? $segmentSr * $segmentPg - $segmentSr + 1 : 1;
+                                            $countSeg = !empty($segmentSr) ? $segmentSr : 0;
+                                            $prchsPrc = $slePrc = $avrgPrc = 0;
                                         @endphp
-                                    @endforeach
+
+
+
+                                        @foreach ($query as $employee_registration)
+                                            <tr>
+                                                <td>{{ $sr }}</td>
+                                                <td>{{ $employee_registration->name }}</td>
+                                                <td>{{ $employee_registration->f_name }}</td>
+                                                <td>{{ $employee_registration->gender }}</td>
+                                                <td>{{ $employee_registration->cnic }}</td>
+                                                <td>{{ $employee_registration->number }}</td>
+                                                <td>{{ $employee_registration->address }}</td>
+                                                <td>{{ $employee_registration->email }}</td>
+                                                <td>{{ $employee_registration->basic_salary }}</td>
+                                                <td>
+                                                    @if (!empty($employee_registration->getRoleNames()))
+                                                        @foreach ($employee_registration->getRoleNames() as $v)
+                                                            {{--                                                        <label class="badge badge-success">{{ $v }}</label> --}}
+                                                            {{ $v }}
+                                                        @endforeach
+                                                    @endif
+                                                </td>
+                                                {{--                                            <td>{{$employee_registration->role}}</td> --}}
+                                                <td>{{ $employee_registration->employee_status == 1 ? 'Yes' : 'No' }}</td>
+                                                {{--                                            <td>{{$employee_registration->employee_status}}</td> --}}
+                                                <td>{{ $employee_registration->login_status == 1 ? 'Yes' : 'No' }}</td>
+                                                <td><a
+                                                        href="{{ route('employee_registration.edit', $employee_registration->id) }}"><i
+                                                            class="fas fa-edit"></i></a></td>
+
+                                            </tr>
+
+                                            @php
+                                                $sr++;
+                                                !empty($segmentSr) && $countSeg !== '0' ?: $countSeg++;
+                                            @endphp
+                                        @endforeach
 
 
                                     </tbody>
 
                                 </table>
                             </div>
-                            {{ $query->appends(['segmentSr' => $countSeg, 'login_status' => $login_status ,'name' => $name, 'emp_status' => $emp_status , 'tech_status' => $tech_status ])->links() }}
+                            {{ $query->appends(['segmentSr' => $countSeg, 'login_status' => $login_status, 'name' => $name, 'emp_status' => $emp_status, 'tech_status' => $tech_status])->links() }}
                         </div>
                     </div>
                 </div>
@@ -231,13 +233,13 @@
         </div>
     </div>
     <!--**********************************
-            Content body end
-        ***********************************-->
+                Content body end
+            ***********************************-->
 @endsection
 @section('script')
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             $("#login_status").select2();
             $("#emp_status").select2();
@@ -260,13 +262,13 @@
                 ignore: [],
                 errorClass: "invalid-feedback animated fadeInUp",
                 errorElement: "div",
-                errorPlacement: function (e, a) {
+                errorPlacement: function(e, a) {
                     jQuery(a).parents(".form-group > div").append(e)
                 },
-                highlight: function (e) {
+                highlight: function(e) {
                     jQuery(e).closest(".form-group").removeClass("is-invalid").addClass("is-invalid")
                 },
-                success: function (e) {
+                success: function(e) {
                     jQuery(e).closest(".form-group").removeClass("is-invalid"), jQuery(e).remove()
                 },
 
