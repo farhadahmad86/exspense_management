@@ -125,6 +125,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>User</th>
+                                                    <th>Attendance Count</th>
                                                     <th>Date</th>
                                                     <th>Check In</th>
                                                     <th>Check In Status</th>
@@ -138,36 +139,41 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($attendances as $attendance)
-                                                    <tr>
-                                                        <td>{{ $attendance->user->name }}</td>
-                                                        <td>{{ $attendance->date }}</td>
-                                                        <td>{{ $attendance->check_in }}</td>
-                                                        <td>{{ $attendance->check_in_status }}</td>
-                                                        <td>{{ $attendance->break_in_status }}</td>
-                                                        <td>{{ $attendance->break_in }}</td>
-                                                        <td>{{ $attendance->break_out }}</td>
-                                                        <td>{{ $attendance->break_out_status }}</td>
-                                                        <td>{{ $attendance->check_out }}</td>
-                                                        <td>{{ $attendance->check_out_status }}</td>
-                                                        <td>
-                                                            <a href="{{ route('attendance.edit', encrypt($attendance->id)) }}"
-                                                                class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
-                                                            <form
-                                                                action="{{ route('attendance.destroy', $attendance->id) }}"
-                                                                method="POST" style="display:block;">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="btn btn-sm btn-danger"
-                                                                    onclick="return confirm('Are you sure?')"><i
-                                                                        class="fas fa-trash"></i>
-                                                                </button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
+                                                @foreach ($attendances as $data)
+                                                    @foreach ($data['records'] as $attendance)
+                                                        <tr>
+                                                            @if ($loop->first)
+                                                                <td rowspan="{{ $data['records']->count() }}">{{ $data['user']->name }}</td>
+                                                                <td rowspan="{{ $data['records']->count() }}">{{ $data['count'] }}</td>
+                                                            @endif
+                                                            <td>{{ $attendance->date }}</td>
+                                                            <td>{{ $attendance->check_in }}</td>
+                                                            <td>{{ $attendance->check_in_status }}</td>
+                                                            <td>{{ $attendance->break_out }}</td>
+                                                            <td>{{ $attendance->break_out_status }}</td>
+                                                            <td>{{ $attendance->break_in }}</td>
+                                                            <td>{{ $attendance->break_in_status }}</td>
+                                                            <td>{{ $attendance->check_out }}</td>
+                                                            <td>{{ $attendance->check_out_status }}</td>
+                                                            <td>
+                                                                <a href="{{ route('attendance.edit', encrypt($attendance->id)) }}" class="btn btn-sm btn-info">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </a>
+                                                                <form action="{{ route('attendance.destroy', $attendance->id) }}" method="POST" style="display:block;">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit" class="btn btn-sm btn-danger"
+                                                                        onclick="return confirm('Are you sure?')">
+                                                                        <i class="fas fa-trash"></i>
+                                                                    </button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        
 
                                         <a href="{{ route('attendance.sync') }}" class="btn btn-success">Sync with
                                             ZKTeco</a>

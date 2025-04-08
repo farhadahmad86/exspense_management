@@ -43,7 +43,16 @@ class AttendanceController extends Controller
             }
         }
 
-        $attendances = $query->get();
+        $attendances = $query->with('user') // eager load user
+            ->get()
+            ->groupBy('user_id')
+            ->map(function ($group) {
+                return [
+                    'user' => $group->first()->user,
+                    'count' => $group->count(),
+                    'records' => $group
+                ];
+            });
 
         return view('attendance.index', compact('attendances'));
     }
@@ -74,10 +83,12 @@ class AttendanceController extends Controller
     public function fetchAttendanceFromZKTeco()
     {
         $auth = Auth::user();
-        $zk = new ZKTeco('192.168.110.200', 4370, 5);
+        $zk = new ZKTeco('192.168.100.200', 4370, 5);
+
 
         if ($zk->connect()) {
             $attendances = $zk->getAttendance();
+            // dd($attendances);
             $presentUserIds = []; // Track users who have attendance
 
             foreach ($attendances as $att) {
